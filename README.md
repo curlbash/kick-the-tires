@@ -1,6 +1,6 @@
-# Terrateam Demo Repository
+# Stategraph Demo Repository
 
-Try Terrateam in 5 minutes without any cloud credentials. This demo uses null resources instead of real infrastructure, so you can learn Terrateam's workflow without any cloud credentials.
+Try Stategraph in 5 minutes without any cloud credentials. This demo uses null resources instead of real infrastructure, so you can learn Stategraph's workflow without any cloud credentials.
 
 ## Quick Start (5 minutes)
 
@@ -16,30 +16,28 @@ Try Terrateam in 5 minutes without any cloud credentials. This demo uses null re
    
    ![Enable GitHub Actions workflows](./images/enable-workflows.png)
 
-3. [Install the Terrateam GitHub App](https://github.com/apps/terrateam-action) on your account/organization
+3. [Install the Stategraph GitHub App](https://github.com/apps/terrateam-action) on your account/organization
 
 4. **Try it out**
    - Edit `dev/main.tf` - change `null_resource_count = 0` to `null_resource_count = 1`
    - Create a new branch and push your changes
    - Open a pull request
-   - Watch Terrateam automatically comment with the terraform plan!
+   - Watch Stategraph automatically comment with the terraform plan!
 
 5. **Apply the changes**
-   Comment `terrateam apply` on the PR to apply the changes. Terrateam will apply and auto-merge the PR if successful.
+   Comment `stategraph apply` on the PR to apply the changes. Stategraph will apply and auto-merge the PR if successful.
 
 ## What You'll See
 
-When you open your first PR, Terrateam will automatically comment with the terraform plan output:
+When you open your first PR, Stategraph will automatically comment with the terraform plan output.
 
-![Terrateam Plan](./images/terrateam-plan.png)
+This demo uses `null_resource`, which doesn’t provision anything. It’s just a placeholder to show how Stategraph runs the Terraform workflow.
 
-This demo uses `null_resource`, which doesn’t provision anything. It’s just a placeholder to show how Terrateam runs the Terraform workflow.
-
-> ⚠️ **Important**: This demo doesn't persist Terraform state between runs. Each `terraform plan` starts fresh, so you won't see destroy operations for previously "created" resources. This keeps the demo simple, but real Terrateam deployments use persistent state backends.
+> ⚠️ **Important**: This demo doesn't persist Terraform state between runs. Each `terraform plan` starts fresh, so you won't see destroy operations for previously "created" resources. This keeps the demo simple, but real Stategraph deployments use persistent state backends.
 
 ## About This Demo
 
-Terrateam automates Terraform workflows through pull requests. When you make infrastructure changes, Terrateam automatically runs `terraform plan` and posts results as PR comments. You can then apply changes directly from the PR.
+Stategraph automates Terraform workflows through pull requests. When you make infrastructure changes, Stategraph automatically runs `terraform plan` and posts results as PR comments. You can then apply changes directly from the PR.
 
 This demo repository uses:
 - **Null Resources:** Instead of real infrastructure, the module uses `null_resource`.
@@ -49,9 +47,9 @@ This demo repository uses:
 
 ## Troubleshooting
 
-**Terrateam isn't commenting on my PR?**
+**Stategraph isn't commenting on my PR?**
 - Check your repository's Actions tab for disabled workflows
-- Verify the Terrateam GitHub App is installed on your repository
+- Verify the Stategraph GitHub App is installed on your repository
 - Make sure your PR changes Terraform files (`.tf` files)
 
 **Want to understand how it works?** Check `modules/main.tf` to see how null resources work without creating real infrastructure
@@ -59,9 +57,9 @@ This demo repository uses:
 ## Next Steps
 
 Ready for real infrastructure? Here's what to do next:
-- [Explore Terrateam's features](https://docs.terrateam.io/) to see what else you can do
-- [Set up cloud provider integration](https://docs.terrateam.io/cloud-providers/) to work with real infrastructure
-- [Explore advanced workflows](https://docs.terrateam.io/advanced-workflows) like drift detection and policy enforcement
+- [Explore Stategraph's features](https://stategraph.com/docs) to see what else you can do
+- [Set up cloud provider integration](https://stategraph.com/docs/orchestration/cloud-providers) to work with real infrastructure
+- [Explore advanced workflows](https://stategraph.com/docs/orchestration/advanced-workflows) like drift detection and policy enforcement
 
 ## Contributing
 
