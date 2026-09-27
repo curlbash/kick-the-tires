@@ -1,17 +1,8 @@
-##########################################################################
-# DO NOT MODIFY
-#
-# THIS FILE SHOULD LIVE IN .github/workflows/terrateam.yml
-#
-# Looking for the Terrateam configuration file? .terrateam/config.yml.
-#
-# See https://terrateam.io/docs
-##########################################################################
- name: 'Terrateam Workflow'
+ name: 'Stategraph'
  on:
    workflow_dispatch:
      inputs:
-       # The work-token and api-base-url are automatically passed in by the Terrateam backend
+       # The work-token and api-base-url are automatically passed in by the Stategraph backend
        work-token:
          description: 'Work Token'
          required: true
@@ -25,18 +16,18 @@
          type: string
          default: '"ubuntu-latest"'
  jobs:
-   terrateam:
-     permissions: # Required to pass credentials to the Terrateam action
+   stategraph:
+     permissions: # Required to pass credentials to the Stategraph action
        id-token: write
        contents: read
      runs-on: ${{ fromJSON(github.event.inputs.runs_on) }}
      timeout-minutes: 1440
-     name: Terrateam Action
+     name: Stategraph
      environment: '${{ github.event.inputs.environment }}'
      steps:
        - uses: actions/checkout@v4
-       - name: Run Terrateam Action
-         id: terrateam
+       - name: Run Stategraph
+         id: stategraph
          uses: terrateamio/action@v1
          with:
            work-token: '${{ github.event.inputs.work-token }}'
